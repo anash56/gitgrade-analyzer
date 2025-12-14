@@ -64,9 +64,8 @@ Backend will run on `http://localhost:5000`
 ```bash
 cd ../frontend
 # Open index.html directly in your browser
-# Or use a simple HTTP server:
-python -m http.server 8000
-# Or use Node.js:
+
+# use Node.js:
 npx http-server -p 8000
 ```
 Frontend will be available at `http://localhost:8000`
@@ -144,7 +143,7 @@ MIT License
 
 ## 👨‍💻 Author
 
-Built with ❤️ for UnsaidTalks GitGrade Hackathon
+Built with ❤️ for GitGrade Hackathon
 
 ---
 
