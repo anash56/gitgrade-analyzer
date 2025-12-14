@@ -1,0 +1,27 @@
+{
+  "name": "gitgrade-analyzer",
+  "version": "1.0.0",
+  "description": "An intelligent system that evaluates GitHub repositories and provides meaningful scores, summaries, and personalized roadmaps for developers.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anash56/gitgrade-analyzer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anash56/gitgrade-analyzer/issues"
+  },
+  "homepage": "https://github.com/anash56/gitgrade-analyzer#readme",
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "@octokit/rest": "^22.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1"
+  }
+}

@@ -6,7 +6,7 @@ An intelligent system that evaluates GitHub repositories and provides meaningful
 
 - **Automated Repository Analysis**: Fetches and analyzes public GitHub repositories
 - **Comprehensive Scoring**: 0-100 score based on multiple quality dimensions
-- **AI-Powered Insights**: Uses Claude AI to generate personalized summaries
+- **AI-Powered Insights**: Uses GEMINI to generate personalized summaries
 - **Actionable Roadmap**: Step-by-step improvement recommendations
 - **Real-time Metrics**: Displays commit history, test coverage, CI/CD status, and more
 
@@ -15,7 +15,7 @@ An intelligent system that evaluates GitHub repositories and provides meaningful
 ### Backend (Node.js + Express)
 - Fetches repository data using GitHub REST API (@octokit/rest)
 - Analyzes code quality, structure, documentation, and practices
-- Generates AI-powered insights using Anthropic's Claude
+- Generates AI-powered insights using GEMINI
 - Calculates weighted scores across multiple dimensions
 
 ### Frontend (HTML/JavaScript)
@@ -28,7 +28,7 @@ An intelligent system that evaluates GitHub repositories and provides meaningful
 
 ### Prerequisites
 - Node.js 16+ and npm
-- GEMINI API Key ([Get one here](https://console.anthropic.com/))
+- GEMINI API Key ([Get one here]( https://makersuite.google.com/app/apikey))
 - GitHub Token (Optional, for higher rate limits)
 
 ### Installation
@@ -49,7 +49,7 @@ npm install
 
 Create a `.env` file in the `backend` folder:
 ```
-GEMINI_API_KEY=your_anthropic_api_key_here
+GEMINI_API_KEY=your_gemini_api_key_here
 GITHUB_TOKEN=your_github_token_here  # Optional
 PORT=5000
 ```
