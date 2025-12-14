@@ -106,7 +106,7 @@ Frontend will be available at `http://localhost:8000`
 
 ## 🎥 Demo
 
-[Link to demo video will be here]
+[https://drive.google.com/file/d/1XVd2JocSrKj4RYJKZ-HONMD1cmCEXByt/view?usp=drive_link]
 
 ## 🛠️ Tech Stack
 
