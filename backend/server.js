@@ -13,50 +13,53 @@ app.use(express.json());
 // Initialize analyzer
 const analyzer = new RepoAnalyzer();
 
-// Health check endpoint
+// ✅ ROOT ROUTE (IMPORTANT FIX)
+app.get('/', (req, res) => {
+  res.send('🚀 GitGrade Backend is running');
+});
+
+// ✅ HEALTH ROUTE
 app.get('/api/health', (req, res) => {
-  res.json({ 
-    status: 'healthy', 
+  res.json({
+    status: 'healthy',
     message: 'GitGrade API is running',
     timestamp: new Date().toISOString()
   });
 });
 
-// Main analyze endpoint
+// ✅ ANALYZE ROUTE
 app.post('/api/analyze', async (req, res) => {
   try {
     const { repo_url } = req.body;
-    
-    // Validate input
+
     if (!repo_url) {
       return res.status(400).json({
         success: false,
         error: 'Repository URL is required'
       });
     }
-    
+
     if (!repo_url.includes('github.com')) {
       return res.status(400).json({
         success: false,
         error: 'Invalid GitHub URL'
       });
     }
-    
-    console.log(`🔍 Analyzing repository: ${repo_url}`);
-    
-    // Analyze the repository
+
+    console.log("🔍 START ANALYSIS:", repo_url);
+
     const result = await analyzer.analyzeRepository(repo_url);
-    
-    console.log(`✅ Analysis complete. Score: ${result.score}/100`);
-    
+
+    console.log("✅ SUCCESS:", result.score);
+
     res.json({
       success: true,
       data: result
     });
-    
+
   } catch (error) {
-    console.error('❌ Analysis error:', error.message);
-    
+    console.error("❌ ERROR:", error.message);
+
     res.status(500).json({
       success: false,
       error: error.message || 'Failed to analyze repository'
@@ -64,9 +67,9 @@ app.post('/api/analyze', async (req, res) => {
   }
 });
 
-// Error handling middleware
+// Global error handler
 app.use((err, req, res, next) => {
-  console.error('Server error:', err);
+  console.error("💥 SERVER ERROR:", err);
   res.status(500).json({
     success: false,
     error: 'Internal server error'
@@ -75,8 +78,5 @@ app.use((err, req, res, next) => {
 
 // Start server
 app.listen(PORT, () => {
-  console.log('🚀 GitGrade API Starting...');
-  console.log(`📍 Server running on http://localhost:${PORT}`);
-  console.log(`📊 Test endpoint: http://localhost:${PORT}/api/health`);
-  console.log('\n✨ Ready to analyze repositories!\n');
+  console.log(`🚀 Server running on port ${PORT}`);
 });

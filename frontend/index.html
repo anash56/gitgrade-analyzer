@@ -298,7 +298,7 @@
                 if (data.success) {
                     displayResults(data.data);
                 } else {
-                    showError(data.error || 'Failed to analyze repository');
+                    showError(data.error || JSON.stringify(data));
                 }
             } catch (error) {
                 document.getElementById('loading').classList.add('hidden');
